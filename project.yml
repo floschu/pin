@@ -1,0 +1,61 @@
+name: Pin
+options:
+  bundleIdPrefix: at.florianschuster
+  deploymentTarget:
+    macOS: "26.0"
+  xcodeVersion: "26.0"
+  minimumXcodeGenVersion: "2.38"
+settings:
+  base:
+    SWIFT_VERSION: "6.2"
+    MACOSX_DEPLOYMENT_TARGET: "26.0"
+    ENABLE_HARDENED_RUNTIME: YES
+    # Ad-hoc signing, so anyone can build without an Apple Developer account.
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
+    DEVELOPMENT_TEAM: ""
+targets:
+  Pin:
+    type: application
+    platform: macOS
+    sources:
+      - Pin/Sources
+      - path: Pin/Resources
+        buildPhase: resources
+        excludes:
+          - Info.plist
+          - Pin.entitlements
+      - path: Pin/Resources/AppIcon.icon
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: at.florianschuster.pin
+        PRODUCT_NAME: Pin
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        INFOPLIST_FILE: Pin/Resources/Info.plist
+        # Only for the Xcode General tab. The shipped value is the one in Info.plist.
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        CODE_SIGN_ENTITLEMENTS: Pin/Resources/Pin.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        COMBINE_HIDPI_IMAGES: YES
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"
+        GENERATE_INFOPLIST_FILE: NO
+      configs:
+        Release:
+          LLVM_LTO: YES
+          DEAD_CODE_STRIPPING: YES
+          STRIP_INSTALLED_PRODUCT: YES
+          STRIP_SWIFT_SYMBOLS: YES
+  PinTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests
+    dependencies:
+      - target: Pin
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: at.florianschuster.pin.tests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Pin.app/Contents/MacOS/Pin"
+        BUNDLE_LOADER: "$(TEST_HOST)"
