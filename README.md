@@ -8,6 +8,10 @@
   Speed reading for macOS. Select text anywhere, press a hotkey, read it word by word.
 </p>
 
+<p align="center">
+  <img src="preview.gif" width="960" alt="A paragraph is selected in VS Code. After Option+Space, Pin opens a small overlay and shows the text one word at a time at 300 words per minute, with one letter of each word highlighted in red.">
+</p>
+
 ---
 
 Pin lives in the menu bar and uses [RSVP](https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation) (Rapid Serial Visual Presentation) to display text one word at a time at a fixed focal point. It captures selected text from any application via the macOS Accessibility API, so there is nothing to copy and paste.

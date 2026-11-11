@@ -640,7 +640,7 @@ private struct AboutSettingsView: View {
             }
 
             Section {
-                AboutLinkRow(title: "Website", systemImage: "globe", url: AboutLinks.website)
+                AboutLinkRow(title: "Made by FLOSCH", systemImage: "person", url: AboutLinks.author)
                 AboutLinkRow(title: "Source Code", systemImage: "chevron.left.forwardslash.chevron.right", url: AboutLinks.sourceCode)
                 AboutLinkRow(title: "Support & Feedback", systemImage: "bubble.left.and.bubble.right", url: AboutLinks.issues)
             } footer: {
@@ -670,7 +670,7 @@ private struct AboutSettingsView: View {
 
 /// External links shown on the About page.
 private enum AboutLinks {
-    static let website = URL(string: "https://pin.flosch.at")
+    static let author = URL(string: "https://flosch.at")
     static let sourceCode = URL(string: "https://github.com/floschu/pin")
     static let issues = URL(string: "https://github.com/floschu/pin/issues")
 }
