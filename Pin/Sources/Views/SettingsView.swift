@@ -640,7 +640,7 @@ private struct AboutSettingsView: View {
             }
 
             Section {
-                AboutLinkRow(title: "Made by Florian Schuster", systemImage: "person", url: AboutLinks.author)
+                AboutLinkRow(title: "Made by FLOSCH", systemImage: "person", url: AboutLinks.author)
                 AboutLinkRow(title: "Source Code", systemImage: "chevron.left.forwardslash.chevron.right", url: AboutLinks.sourceCode)
                 AboutLinkRow(title: "Support & Feedback", systemImage: "bubble.left.and.bubble.right", url: AboutLinks.issues)
             } footer: {
