@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="preview.gif" width="720" alt="A paragraph is selected in TextEdit. After Option+Space, Pin opens a small overlay below it and shows the text one word at a time at 300 words per minute, with one letter of each word highlighted in red.">
+  <img src="preview.gif" width="960" alt="A paragraph is selected in VS Code. After Option+Space, Pin opens a small overlay and shows the text one word at a time at 300 words per minute, with one letter of each word highlighted in red.">
 </p>
 
 ---
