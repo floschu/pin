@@ -45,6 +45,26 @@ open Pin.xcodeproj
 
 Then press Run in Xcode. No Apple Developer account needed. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
+## Privacy
+
+Last updated: October 2026
+
+This policy applies to the Pin app for macOS, made by Florian Schuster. Pin is free and open source, and all of its source code is in this repository.
+
+**Data collection.** Pin does not collect, store, transmit, or share any personal data. It runs entirely on your device and makes no network requests. There are no servers, no analytics, no telemetry, and no crash reporting.
+
+**Text processing.** Pin reads the selected text from the active app through the macOS Accessibility API. If that is not available, it can fall back to briefly copying the selection to the system clipboard. The text is processed on your device and is never stored, logged, or transmitted. After a clipboard capture, Pin tries to restore your previous clipboard contents. If the clipboard changes during the capture, the restore may not happen.
+
+**Permissions.** Pin needs the macOS Accessibility permission to read selected text from other apps. You grant it in System Settings and can revoke it at any time. Pin needs no other permissions.
+
+**Third-party services.** Pin has no third-party dependencies and uses no external services.
+
+**Children's privacy.** Pin collects no data, so it collects no data from children either.
+
+**Changes.** This policy may change. Changes appear in this section with a new date.
+
+**Contact.** For questions about this policy, open an [issue](https://github.com/floschu/pin/issues).
+
 ## License
 
 [MIT](LICENSE)
